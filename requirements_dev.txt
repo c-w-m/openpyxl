@@ -1,0 +1,43 @@
+# dev devcontainer convenience
+# `pip freeze` version when not locked
+#-------------------------------------------------
+
+# ~~~~~~~ requirements.txt ~~~~~~~
+# pip>=18.0
+# lxml>=4.2.0
+# pytest
+# pillow
+# tox
+# pandas
+
+# ~~~~~~~ tox.ini ~~~~~~~
+# none
+
+# ~~~~~~~ setup.py ~~~~~~~
+# none
+
+# ~~~~~~~ setup.cfg ~~~~~~~
+# none
+
+# ~~~~~~~ vsc ~~~~~~~
+# none
+
+# ~~~~~~~ vscdoc ~~~~~~~
+# none
+
+# ~~~~~~~ pyproject.toml ~~~~~~~
+# none
+
+# ~~~~~~~ mkdocs.yml ~~~~~~~
+# none
+
+# ~~~~~~~ pre-commit-config.yaml ~~~~~~~
+# none
+
+# ~~~~~~~ bitbucket-pipelines.yml ~~~~~~~
+# none
+
+# ~~~~~~~ future vsc use ~~~~~~~
+# none
+
+#-------------------------------------------------
