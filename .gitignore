@@ -9,6 +9,7 @@ certs/*.pem
 .tox/
 tox_run.md
 tox_run_r.md
+tox_run_*.md
 
 # cache
 .mypy_cache/
@@ -87,6 +88,7 @@ instance/
 .scrapy
 
 # Sphinx documentation
+doc/api/
 docs/_build
 Thumbs.db
 .DS_Store
