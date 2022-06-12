@@ -3,10 +3,8 @@
 #-------------------------------------------------
 
 # ~~~~~~~ vscode extensions support ~~~~~~~
-rich~=12.2.0
 
 # ~~~~~~~ project demo ~~~~~~~
-pathspec~=0.9.0
 
 # ~~~~~~~ awesome development ~~~~~~~
 pathspec~=0.9.0

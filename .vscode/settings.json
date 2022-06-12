@@ -61,6 +61,7 @@
         "jupyterlab",
         "kiwisolver",
         "lldd",
+        "lxml",
         "matplotlib",
         "mccabe",
         "mkdocs",
@@ -158,13 +159,13 @@
     "python.testing.unittestArgs": [
         "-v",
         "-s",
-        "./tests",
+        "./openpyxl",
         "-p",
         "test_*.py"
     ],
     "python.testing.pytestArgs": [
-        "--ignore=tests/data",
-        "tests"
+        "--ignore=openpyxl/tests/data",
+        "./openpyxl"
     ],
     "restructuredtext.syntaxHighlighting.disabled": true,
     "diffEditor.wordWrap": "on",
