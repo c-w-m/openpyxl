@@ -3,6 +3,7 @@
 import pytest
 
 from io import BytesIO
+from .. import lxml_available, defusedxml_available
 from ..functions import fromstring, iterparse
 
 
@@ -47,6 +48,8 @@ vulnerable_xml_strings = (
 )
 
 
+@pytest.mark.skipif(lxml_available() or not defusedxml_available(),
+                    reason='lxml is installed or defusedxml is not installed')
 @pytest.mark.defusedxml_required
 @pytest.mark.parametrize("xml_input", vulnerable_xml_strings)
 def test_fromstring(xml_input):
@@ -55,6 +58,8 @@ def test_fromstring(xml_input):
         fromstring(xml_input)
 
 
+@pytest.mark.skipif(lxml_available() or not defusedxml_available(),
+                    reason='lxml is installed or defusedxml is not installed')
 @pytest.mark.defusedxml_required
 @pytest.mark.parametrize("xml_input", vulnerable_xml_strings)
 def test_iterparse(xml_input):

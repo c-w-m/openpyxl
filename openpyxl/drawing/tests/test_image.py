@@ -7,9 +7,16 @@ def Image():
     from ..image import Image
     return Image
 
+def Pil_available():
+    try:
+        import PIL
+        return True
+    except ImportError:
+        return False
 
 class TestImage:
 
+    @pytest.mark.skipif(Pil_available(), reason='PIL (pillow) is installed')
     @pytest.mark.pil_not_installed
     def test_import(self, Image, datadir):
         from ..image import _import_image
