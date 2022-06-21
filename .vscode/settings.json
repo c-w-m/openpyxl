@@ -171,5 +171,8 @@
     ],
     "restructuredtext.syntaxHighlighting.disabled": true,
     "diffEditor.wordWrap": "on",
-    "editor.wordWrap": "bounded"
+    "editor.wordWrap": "bounded",
+    "cSpell.overrides": [
+
+    ]
 }
