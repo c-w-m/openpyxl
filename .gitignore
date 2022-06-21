@@ -130,9 +130,3 @@ venv_/
 
 # mypy
 .mypy_cache/
-
-#
-*.secret
-.secrets/
-#visual studio code
-.vscode

@@ -3,10 +3,9 @@
 #-------------------------------------------------
 
 # ~~~~~~~ vscode extensions support ~~~~~~~
+# none
 
-# ~~~~~~~ project demo ~~~~~~~
-
-# ~~~~~~~ awesome development ~~~~~~~
+# ~~~~~~~ examples ~~~~~~~
 pathspec~=0.9.0
 pydantic~=1.9.1
 ruamel.yaml~=0.17.21
