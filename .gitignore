@@ -10,6 +10,7 @@ certs/*.pem
 tox_run.md
 tox_run_r.md
 tox_run_*.md
+pytest_openpyxl_r*.txt
 
 # cache
 .mypy_cache/

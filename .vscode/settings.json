@@ -174,5 +174,6 @@
     "editor.wordWrap": "bounded",
     "cSpell.overrides": [
 
-    ]
+    ],
+    "jupyter.jupyterServerType": "local"
 }

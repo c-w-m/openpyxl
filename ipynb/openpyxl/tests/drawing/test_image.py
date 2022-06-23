@@ -1,0 +1,67 @@
+# Copyright (c) 2010-2022 openpyxl
+
+import pytest
+
+@pytest.fixture
+def Image():
+    from openpyxl.drawing.image import Image
+    return Image
+
+def Pil_available():
+    try:
+        import PIL
+        return True
+    except ImportError:
+        return False
+
+class TestImage:
+
+    @pytest.mark.skipif(Pil_available(), reason='PIL (pillow) is installed')
+    @pytest.mark.pil_not_installed
+    def test_import(self, Image, datadir):
+        from openpyxl.drawing.image import _import_image
+        datadir.chdir()
+        with pytest.raises(ImportError):
+            _import_image("plain.png")
+
+
+    @pytest.mark.pil_required
+    def test_ctor(self, Image, datadir):
+        datadir.chdir()
+        i = Image(img="plain.png")
+        assert i.format == "png"
+        assert i.width == 118
+        assert i.height == 118
+        assert i.anchor == "A1"
+
+
+    @pytest.mark.pil_required
+    def test_write_image(self, Image, datadir):
+        datadir.chdir()
+        i = Image("plain.png")
+        with open("plain.png", "rb") as src:
+            assert i._data() == src.read()
+
+
+    @pytest.mark.pil_required
+    def test_dont_close_pil(self, Image, datadir):
+        datadir.chdir()
+        from openpyxl.drawing.image import PILImage, Image
+        obj = PILImage.open("plain.png")
+        img = Image(obj)
+        assert img.ref.fp is not None
+        img._data()
+
+
+    @pytest.mark.pil_required
+    def test_save(self, Image, datadir):
+        datadir.chdir()
+        img = Image("plain.png")
+        assert img._data()[:10] == b'\x89PNG\r\n\x1a\n\x00\x00'
+
+
+    @pytest.mark.pil_required
+    def test_convert(self, Image, datadir):
+        datadir.chdir()
+        img = Image("plain.tif")
+        assert img._data()[:10] == b'\x89PNG\r\n\x1a\n\x00\x00'
